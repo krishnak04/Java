@@ -1,0 +1,25 @@
+# Write a program to create a class and implement the concepts of Method Overloading #
+
+class add{
+   void  adding(int a ,int b){
+        System.out.println(a+b);
+    }
+   void adding (int a){
+       System.out.println(a);
+   }
+   void adding(){
+       int a = 30;
+       int b = 50;
+       System.out.println(a+b);
+   }
+}
+public class Overloading1B {
+  static  int a1 = 15;
+  static  int b = 12;
+    public static void main(String[] args) {
+        add a = new add();
+        a.adding();
+        a.adding(20);
+        a.adding(a1, b);
+    }
+}
