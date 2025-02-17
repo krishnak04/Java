@@ -1,0 +1,40 @@
+# Write a program to create a class and implement a default, overloaded and copyConstructor. #
+import java.util.Scanner;
+class emp1 {
+    int empid;
+    String ename; 
+    public emp1(){
+        empid=10;
+        ename="Krishna";
+    }
+    emp1(emp1 e){
+        this.empid=e.empid;
+        this.ename=e.ename;
+    }
+     emp1 (int emp,String ename){
+        this.empid=empid;
+        this.ename=ename;
+}
+    void display(){
+        System.out.println("enter employee id="+empid);
+      System.out.println("enter employee name="+ename);
+    }
+    }
+public class Emp1A{
+public static void main(String args[]) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the employee id");
+    int empid=sc.nextInt();
+    
+    System.out.println("Enter the employee name");
+    String ename= sc.next();
+    
+    emp1 e1 = new emp1(empid,ename);
+    System.out.println("the employee details are as follow: ");
+    e1.display();
+   
+    emp1 e2 = new emp1(e1);
+    System.out.println("\n the employee details  ");
+    e2.display();
+}
+}
