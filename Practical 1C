@@ -1,0 +1,21 @@
+# Write a program to create a class and implement the concepts of Static methods #
+
+import java.util.*;
+class square 
+{
+    static int x;
+    static void square()
+    {
+     Scanner h= new Scanner(System.in);
+     System.out.println("Enter a Number");
+     int x=h.nextInt();
+     System.out.println("Square of Number:"+x*x);
+    }
+}
+ public class Static_Method1C
+ {
+ public static void main(String[] args)
+ {
+     square.square();
+ }
+}
