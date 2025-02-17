@@ -1,0 +1,29 @@
+# Write a program to define user defined exceptions and raise them as per the requirements #
+
+class myexcaption extends Exception{
+    myexcaption(String message){
+        super(message);
+    }
+}
+public class practical3b {
+    public static void main(String[] args){
+        int x=5,y=1000;
+        try{
+            float z=(float)(x)/(float)(y);
+            if(z<0.01){
+                throw new myexcaption("number is to small");
+                
+                
+            }
+        } 
+        catch (myexcaption e){
+            System.out.println("caught myexcaption");
+            System.out.println(e.getMessage());
+        }
+        finally{
+            System.out.println("is always executed");
+            
+        }
+    }
+    
+}
