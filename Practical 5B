@@ -1,0 +1,62 @@
+# Write a JDBC program to Show the details of a specified product from a given table selected using Combobox #
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Combo_Box extends JFrame implements ItemListener{
+    
+    JComboBox clr;
+    Container c;
+    public Combo_Box(){
+    c=getContentPane();
+        setLayout(new FlowLayout());
+        clr= new JComboBox();
+        clr.addItem("Red");
+        clr.addItem("Green");
+        clr.addItem("Pink");
+        clr.addItem("Orange");
+        clr.addItem("Black");
+        clr.addItem("Yellow");
+        clr.addItem("Magenta");
+        clr.addItem("Cyan");
+        clr.addItem("Gray");
+        clr.addItem("Dark Gray");
+        clr.addItemListener(this);
+        add(clr);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(400,400);
+          setVisible(true);
+        
+    }
+      public void itemStateChanged(ItemEvent e){
+      String s =(String)clr.getSelectedItem();
+         int n = clr.getSelectedIndex();
+          System.out.println("Color = "+ s + "Index = "+ n);
+          if(s.equals("Green"))
+              c.setBackground(Color.GREEN);
+          if(s.equals("Red"))
+              c.setBackground(Color.RED);
+          if(s.equals("Pink"))
+              c.setBackground(Color.PINK);
+          if(s.equals("Orange"))
+              c.setBackground(Color.ORANGE);
+          if(s.equals("Black"))
+              c.setBackground(Color.BLACK);
+          if(s.equals("Yellow"))
+              c.setBackground(Color.YELLOW);
+          if(s.equals("Magenta"))
+              c.setBackground(Color.MAGENTA);
+          if(s.equals("Cyan"))
+              c.setBackground(Color.CYAN);
+          if(s.equals("Gray"))
+              c.setBackground(Color.GRAY);
+          if(s.equals("Dark Gray"))
+              c.setBackground(Color.DARK_GRAY);
+      
+      }
+      
+      public static void main(String[] args) {
+      new   Combo_Box();
+      
+    }
+}
