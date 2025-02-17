@@ -1,0 +1,62 @@
+# Create a Swing application to demonstrate use of TextArea using scrollpane to show contest of text file in textarea selected    
+  using file chooser. #
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+public class File_Chooser extends JFrame implements ActionListener{
+    JTextArea textarea = new JTextArea();
+    JMenuBar menubar = new JMenuBar();
+    JMenu file = new JMenu();
+    JMenuItem open = new JMenuItem();
+    JMenuItem close = new JMenuItem();
+    public void  File_Chooser(){
+        setTitle("Opening Txt File");
+        setSize(300,200);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        JTextArea textArea = new JTextArea(40,40);
+        menubar .add(file);
+        file.setText("FILE");
+        file.add(open);
+        file.add(close);
+      setJMenuBar(menubar);
+      open.setText("OPEN");
+      close.setText("CLOSE");
+      setLayout(
+      new FlowLayout(FlowLayout.CENTER)
+      );
+      JScrollPane js = new JScrollPane(textArea,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+       add(js);
+       open.addActionListener(this);
+       close.addActionListener(this);   
+    }
+    @Override
+      public void actionPerformed(ActionEvent e){
+      if(e.getSource() == open)
+          try{
+          JFileChooser open = new JFileChooser();
+          int option = open.showOpenDialog(this);         
+          File f1 = new File(open.getSelectedFile().getPath());
+          FileReader fr = new FileReader(f1);
+          BufferedReader br = new BufferedReader(fr);
+          String s;
+          while((s=br.readLine()) !=null)
+          {
+          textarea.append(s+"\n");
+        }
+          fr.close();  
+          }catch(Exception ee){
+              System.out.println("Exception:"+ee);          
+          }
+      if(e.getSource() == close){        
+          dispose();
+           // setDefaultCloseOperation(EXIT_ON_CLOSE);
+      }
+      }
+      public static void main(String[] args) {
+      File_Chooser f =   new File_Chooser();
+      f.File_Chooser();
+    }
+}
