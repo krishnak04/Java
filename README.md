@@ -1,2 +1,0 @@
-# Krishna-k
-Hello World
