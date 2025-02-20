@@ -1,4 +1,5 @@
 # Write a program to create a class and implement a default, overloaded and copyConstructor. #
+
 import java.util.Scanner;
 class emp1 {
     int empid;
@@ -12,7 +13,7 @@ class emp1 {
         this.ename=e.ename;
     }
      emp1 (int emp,String ename){
-        this.empid=empid;
+        this.empid=emp;
         this.ename=ename;
 }
     void display(){
