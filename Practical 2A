@@ -1,5 +1,69 @@
 # Write a program to implement the concepts of Inheritance and Method overriding #
 
+# single level inheritance #
+
+class Room {
+    int length;
+    int breadth;
+    Room(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+    int area() {
+        return (length * breadth);
+    }
+}
+class Bedroom extends Room { 
+    int height; 
+    Bedroom(int l, int b, int h) {
+        super(l, b); 
+        height = h; 
+    }
+    int volume() {
+        return (length * breadth * height);
+    }
+}
+public class Inheritance {
+    public static void main(String[] args) { 
+        Bedroom B = new Bedroom(10, 20, 5); 
+        System.out.println("Area is " + B.area()); 
+        System.out.println("Volume is " + B.volume()); 
+    }
+}
+
+# multi level inheritance #
+
+class A{
+    int a;
+    A(int x){
+        this.a = x;
+        System.out.println("The value of x is "+a);
+    }
+}
+class B extends A{
+    int b;
+    B(int x,int y){
+        super(x);
+        this.b=y;
+        System.out.println("The value of b is "+b);
+    }
+}
+class C extends B{
+    int c;
+    C(int x,int y,int z){
+        super(x,y);
+        this.c=z;
+        System.out.println("The value of c is "+c);
+    }
+}
+public class Multilevel_inheritance {
+    public static void main(String[] args) {
+        C obj = new C(10,20,30);
+    }   
+}
+
+# Method Overding #
+
 class Base{
     int x;
     Base(){
@@ -26,3 +90,4 @@ public class Method_overiding {
         d.display();
     }
 }
+
