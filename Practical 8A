@@ -2,11 +2,10 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-public class Pract8_a extends JFrame implements ActionListener{
+public class Action_Event extends JFrame implements ActionListener{
     JButton b1;
     JLabel l1;
-    Pract8_a(){
+    Action_Event(){
         setTitle("Button Example");
         b1 = new JButton("Click Me!");
         l1 = new JLabel();
@@ -23,6 +22,7 @@ public class Pract8_a extends JFrame implements ActionListener{
         l1.setText("Welcome");
     }
     public static void main(String args[]){
-        new Pract8_a();
+        new Action_Event();
     }
 }
+
