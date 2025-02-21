@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Pract7_b extends JFrame implements ActionListener{
+public class Grid_Layout extends JFrame implements ActionListener{
     JButton b1;
     JButton b2;
     JLabel l1;
@@ -11,7 +11,7 @@ public class Pract7_b extends JFrame implements ActionListener{
     JTextField t3;
     JTextField t1;
     JTextField t2;
-    Pract7_b(){
+    Grid_Layout (){
         setTitle("Simple Calculator");
         setLayout(new GridLayout(4,2));
         b1 = new JButton("+");
@@ -53,6 +53,6 @@ public class Pract7_b extends JFrame implements ActionListener{
         t3.setText(res);
     }
     public static void main(String args[]){
-        new Pract7_b();
+        new Grid_Layout();
     }
 }
