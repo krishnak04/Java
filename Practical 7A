@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Pract7_a extends JFrame implements ActionListener{
+public class Flow_Layout extends JFrame implements ActionListener{
     JButton b1;
     JLabel l1;
     JLabel l2;
     JTextField t1;
-    Pract7_a(){
+    Flow_Layout(){
         setTitle("Factorial Example");
         setLayout(new FlowLayout());
         b1 = new JButton("Calculate");
@@ -39,6 +39,6 @@ public class Pract7_a extends JFrame implements ActionListener{
         
     }
     public static void main(String args[]){
-        new Pract7_a();
+        new Flow_Layout();
     }
 }
