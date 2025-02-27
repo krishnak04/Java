@@ -1,0 +1,57 @@
+ # Focus_Event #
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Focus_Event extends JFrame implements FocusListener{
+    JTextField txtUserid;
+    JPasswordField txtpassword;
+    Focus_Event()
+    {
+        JPanel panel1=new JPanel();
+        panel1.add(new JLabel("Enter user id :"));
+        txtUserid=new JTextField(20);
+        panel1.add(txtUserid);
+        add(panel1,"North");
+        
+        JPanel panel2=new JPanel();
+        panel2.add(new JLabel("Enter password"));
+        txtpassword=new JPasswordField(20);
+        panel2.add(txtpassword);
+        add(panel2);
+        txtUserid.addFocusListener(this);
+        txtpassword.addFocusListener(this);
+        setSize(400,400);
+        setVisible(true);
+        setDefaultCloseOperation(3);
+        
+        
+    }
+
+   
+    @Override
+    public void focusGained(FocusEvent e) {
+        Component  c=(Component)e.getSource();
+        Color green=new Color(0,200,0);
+        c.setBackground(green);
+        
+        
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+         Component  c=(Component)e.getSource();
+        Color g=new Color(255,255,255);
+        c.setBackground(g);
+    }
+         public static void main(String args[])
+    {
+        Focus_Event frame=new Focus_Event();
+        frame.setTitle("Focus listener Java Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setBounds(100,200,400,200);
+        frame.setVisible(true);
+    }
+    }
+        
