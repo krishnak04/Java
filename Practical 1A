@@ -1,41 +1,59 @@
 # Write a program to create a class and implement a default, overloaded and copyConstructor. #
 
-   import java.util.Scanner;
+import java.util.Scanner;
+
 class emp1 {
     int empid;
     String ename; 
-    public emp1(){
-        empid=10;
-        ename="Krishna";
+
+    // Default constructor
+    public emp1() {
+        empid = 10;
+        ename = "Krishna";
     }
-    emp1(emp1 e){
-        this.empid=e.empid;
-        this.ename=e.ename;
+
+    // Copy constructor
+    emp1(emp1 e) {
+        this.empid = e.empid;
+        this.ename = e.ename;
     }
-     emp1 (int emp,String ename){
-        this.empid=emp;
-        this.ename=ename;
+
+    // Parameterized constructor
+    emp1(int emp, String ename) {
+        this.empid = emp;
+        this.ename = ename;
+    }
+
+    // Method to display employee details
+    void display() {
+        System.out.println("Employee ID: " + empid);
+        System.out.println("Employee Name: " + ename);
+    }
 }
-    void display(){
-        System.out.println("enter employee id="+empid);
-      System.out.println("enter employee name="+ename);
+
+public class Emp1A {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Input employee ID
+        System.out.print("Enter the employee ID: ");
+        int empid = sc.nextInt();
+        
+        // Input employee name
+        System.out.print("Enter the employee name: ");
+        String ename = sc.next();
+        
+        // Create an employee object using the parameterized constructor
+        emp1 e1 = new emp1(empid, ename);
+        System.out.println("The employee details are as follows: ");
+        e1.display();
+       
+        // Create a copy of the employee object using the copy constructor
+        emp1 e2 = new emp1(e1);
+        System.out.println("\nThe copied employee details are: ");
+        e2.display();
+        
+        // Close the scanner
+        sc.close();
     }
-    }
-public class Emp1A{
-public static void main(String args[]) {
-    Scanner sc=new Scanner(System.in);
-    System.out.println("Enter the employee id");
-    int empid=sc.nextInt();
-    
-    System.out.println("Enter the employee name");
-    String ename= sc.next();
-    
-    emp1 e1 = new emp1(empid,ename);
-    System.out.println("the employee details are as follow: ");
-    e1.display();
-   
-    emp1 e2 = new emp1(e1);
-    System.out.println("\n the employee details  ");
-    e2.display();
-}
 }
