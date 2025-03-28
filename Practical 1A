@@ -1,6 +1,6 @@
 # Write a program to create a class and implement a default, overloaded and copyConstructor. #
 
-import java.util.Scanner;
+   import java.util.Scanner;
 class emp1 {
     int empid;
     String ename; 
